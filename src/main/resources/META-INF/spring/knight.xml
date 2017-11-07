@@ -34,4 +34,30 @@
 
     </aop:config>
 
+    <!--不配置ID，默认根据全限定类名来进行命名，soundsystem.SgtPeppers#0”。其中,“#0”是一个计数的形式,用来区分相同类型的其他 bean。
+    如果你声明了另外一个SgtPeppers,并且没有明确进行标识,那么它自动得到的ID将会 是“soundsystem.SgtPeppers#1”-->
+    <bean id="compactDisc" class="soundsystem.SgtPeppers"/>
+    <bean id="cdPlayer" class="soundsystem.CDPlayer">
+        <constructor-arg ref="compactDisc"/>
+    </bean>
+    <!--属性注入的配置-->
+    <!--<bean id="cdPlayer" class="soundsystem.CDPlayer">-->
+        <!--<property name="CompactDisc" ref="compactDisc"/>-->
+    <!--</bean>-->
+
+    <!--不是引用，字面量方式的注入-->
+    <bean id="compactDisc1" class="soundsystem.BlankDisc">
+        <constructor-arg value="Sgt.Pepper's Lonely Hearts Club Band"/>
+        <constructor-arg value="The Beatles"/>
+        <!--<constructor-arg><null/></constructor-arg>-->
+        <constructor-arg>
+            <list>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
 </beans>

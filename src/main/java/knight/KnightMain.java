@@ -1,6 +1,7 @@
 package knight;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import soundsystem.BlankDisc;
 
 /**
  * Created by yh on 17/11/1.
@@ -13,6 +14,8 @@ public class KnightMain {
         //        获取Knight Bean
         Knight knight = context.getBean(Knight.class);
         knight.embarkOnQuest();
+        BlankDisc blankDisc = context.getBean(BlankDisc.class);
+        blankDisc.play();
         context.close();
     }
 }

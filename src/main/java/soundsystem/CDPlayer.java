@@ -19,9 +19,9 @@ public class CDPlayer implements MediaPlayer {
 
     //  方法注入
 // 将required属性设置为false时,Spring会尝试执行自动装配,但是如果没有匹配的bean的 话,Spring将会让这个bean处于未装配的状态
-//    如果有多个bean都能满足依赖关系的话,Spring将会抛出一个异常,表明没有明确指定要选择哪 个bean进行自动装配
+//    如果有多个bean都能满足依赖关系的话,Spring将会抛出一个异常,表明没有明确指定要选择哪个bean进行自动装配
     @Autowired(required = false)
-    public void insertCompactDisc(CompactDisc cd) {
+    public void setCompactDisc(CompactDisc cd) {
         this.cd = cd;
     }
 
