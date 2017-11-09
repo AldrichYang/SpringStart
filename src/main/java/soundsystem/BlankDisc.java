@@ -1,5 +1,7 @@
 package soundsystem;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import java.util.List;
 
 /**
@@ -10,7 +12,8 @@ public class BlankDisc implements CompactDisc {
     private String artist;
     private List<String> tracks;
 
-    public BlankDisc(String title, String artist, List<String> tracks) {
+    public BlankDisc(@Value("#{systemProperties['disc.title']}") String title,
+                     @Value("#{systemProperties['disc.artist']}")  String artist, List<String> tracks) {
         this.artist = artist;
         this.title = title;
         this.tracks = tracks;
