@@ -2,11 +2,13 @@ package concert;
 
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
 /**
  * Created by yh on 17/11/14.
  */
+@Aspect
 public class Audience {
 //    Audience依然可以当做一个普通bean来使用，只是它通过注解表明会作为切面使用
 //    切点定义了何处执行

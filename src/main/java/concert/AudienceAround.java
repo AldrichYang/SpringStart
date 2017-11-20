@@ -2,11 +2,13 @@ package concert;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * Created by yh on 17/11/14.
  */
+@Aspect
 public class AudienceAround {
 
     @Pointcut("execution(** concert.Performance.perform(..))")
