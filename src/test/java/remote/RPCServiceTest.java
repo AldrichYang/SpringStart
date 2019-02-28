@@ -1,4 +1,4 @@
-package hessian;
+package remote;
 
 import config.RootConfig;
 import org.junit.Test;
@@ -8,6 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import service.Spitter2Service;
+import service.Spitter3Service;
 import service.SpitterService;
 
 /**
@@ -21,6 +22,8 @@ public class RPCServiceTest {
     SpitterService spitterService;
     @Autowired
     Spitter2Service spitter2Service;
+    @Autowired
+    Spitter3Service spitter3Service;
 
 
     @Test
@@ -31,6 +34,11 @@ public class RPCServiceTest {
     @Test
     public void httpInvokerRPC() {
         System.out.println(spitter2Service.hello2Spitter());
+    }
+
+    @Test
+    public void wsRPC() {
+        System.out.println(spitter3Service.hello3Spitter());
     }
 
 
